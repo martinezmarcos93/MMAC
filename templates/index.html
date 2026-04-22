@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MMAC — Marcos Martínez Analista Contable</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+<div id="cursor"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+        <rect x="2" y="13" width="4" height="7" fill="#C8B99A"/>
+        <rect x="8" y="9" width="4" height="11" fill="#C8B99A" opacity="0.7"/>
+        <rect x="14" y="4" width="4" height="16" fill="#C8B99A" opacity="0.5"/>
+        <path d="M4 13 L10 8 L14 11 L18 4" stroke="#C8B99A" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="18" cy="4" r="1.5" fill="#C8B99A"/>
+      </svg>
+    </div>
+    <span class="nav-logo-text">MMAC</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre mí</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#contacto" class="nav-cta">Consultar</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-left">
+    <span class="hero-tag">MMAC · Marcos Martínez · Analista Contable</span>
+    <h1 class="hero-title">Facturá con <em>precisión,</em> crecé con datos</h1>
+    <p class="hero-sub">Asesoramiento impositivo para monotributistas, autónomos digitales y contratistas de consorcios. Trámites 100% online, atención directa.</p>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn-primary">Consulta gratuita</a>
+      <a href="#servicios" class="btn-ghost">Ver servicios <span>↓</span></a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-card">
+      <div class="hero-card-logo">
+        <div class="logo-mark">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+            <rect x="2" y="18" width="5" height="10" fill="#C8B99A"/>
+            <rect x="9" y="12" width="5" height="16" fill="#C8B99A" opacity="0.7"/>
+            <rect x="16" y="5" width="5" height="23" fill="#C8B99A" opacity="0.5"/>
+            <path d="M4.5 18 L11.5 11 L16.5 14.5 L18.5 5" stroke="#C8B99A" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="18.5" cy="5" r="2" fill="#C8B99A"/>
+          </svg>
+        </div>
+        <div class="logo-text-block">
+          <div class="logo-brand">MMAC</div>
+          <div class="logo-sub">Marcos Martínez · Analista Contable</div>
+        </div>
+      </div>
+      <ul class="stat-list">
+        <li class="stat-item">
+          <span class="stat-label">Experiencia</span>
+          <span class="stat-value">3+ años</span>
+        </li>
+        <li class="stat-item">
+          <span class="stat-label">Impuestos</span>
+          <span class="stat-value">IVA · IIBB · Ganancias</span>
+        </li>
+        <li class="stat-item">
+          <span class="stat-label">Automatización</span>
+          <span class="stat-value">Python · SQL</span>
+        </li>
+        <li class="stat-item">
+          <span class="stat-label">Modalidad</span>
+          <span class="stat-value">100% Online</span>
+        </li>
+        <li class="stat-item">
+          <span class="stat-label">Formación</span>
+          <span class="stat-value">Cont. Público UNDEF</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span class="scroll-text">Scroll</span>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="about-visual">
+    <div class="about-frame">
+      <div class="about-frame-grid"></div>
+      <pre class="about-code"><span class="code-comment"># mmac_profile.py</span>
+<span class="code-keyword">class</span> <span class="code-fn">AnalistaContable</span>:
+    nombre = <span class="code-string">"Marcos Martínez"</span>
+    marca  = <span class="code-string">"MMAC"</span>
+    
+    competencias = [
+        <span class="code-string">"IVA"</span>, <span class="code-string">"IIBB"</span>, <span class="code-string">"Ganancias"</span>,
+        <span class="code-string">"Monotributo"</span>, <span class="code-string">"Consorcios"</span>,
+    ]
+    
+    stack_tech = {
+        <span class="code-string">"lenguajes"</span>: [<span class="code-string">"Python"</span>, <span class="code-string">"SQL"</span>],
+        <span class="code-string">"software"</span>:  [<span class="code-string">"Tango"</span>, <span class="code-string">"SAP"</span>],
+        <span class="code-string">"reduccion"</span>: <span class="code-num">0.90</span>,  <span class="code-comment"># -90% tiempo</span>
+    }
+    
+    <span class="code-keyword">def</span> <span class="code-fn">resolver</span>(self, problema):
+        <span class="code-keyword">return</span> self.<span class="code-fn">precisión</span>(
+            problema, tech=<span class="code-string">"Python"</span>
+        )</pre>
+      <div class="about-badge">
+        <span class="badge-num">90%</span>
+        <span class="badge-label">Ahorro de tiempo operativo</span>
+      </div>
+    </div>
+  </div>
+  <div class="about-content">
+    <span class="section-tag">Sobre mí</span>
+    <h2 class="section-title">Contabilidad con<br><em>criterio propio</em></h2>
+    <p class="section-body">Asesor impositivo con más de 3 años de experiencia, cursando Contador Público en la UNDEF. Trabajo con precisión tributaria y, cuando tiene sentido, aplico automatización de procesos para reducir errores y tiempos operativos. El resultado: atención directa, sin intermediarios y sin vueltas.</p>
+    <div class="skills-list reveal">
+      <div class="skill-item"><div class="skill-dot"></div><span class="skill-text">Liquidación IVA · IIBB</span></div>
+      <div class="skill-item"><div class="skill-dot"></div><span class="skill-text">Monotributo y Autónomos</span></div>
+      <div class="skill-item"><div class="skill-dot"></div><span class="skill-text">Ganancias 4° (SIRADIG)</span></div>
+      <div class="skill-item"><div class="skill-dot"></div><span class="skill-text">Convenio Multilateral</span></div>
+      <div class="skill-item"><div class="skill-dot"></div><span class="skill-text">Python para fiscalidad</span></div>
+      <div class="skill-item"><div class="skill-dot"></div><span class="skill-text">ARCA sin errores</span></div>
+      <div class="skill-item"><div class="skill-dot"></div><span class="skill-text">Consorcios · Facturación</span></div>
+      <div class="skill-item"><div class="skill-dot"></div><span class="skill-text">Tango · SAP · ADA4</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="services-header reveal">
+    <div>
+      <span class="section-tag">Servicios</span>
+      <h2 class="section-title">Lo que resuelvo <em>por vos</em></h2>
+    </div>
+    <p class="section-body">Asesoramiento personalizado, 100% online. Sin lenguaje técnico-burocrático. Atención directa, sin intermediarios.</p>
+  </div>
+  <div class="services-grid reveal">
+    <div class="service-card">
+      <span class="service-num">01</span>
+      <h3 class="service-title">Monotributo inteligente</h3>
+      <p class="service-desc">Categorización correcta, recategorización oportuna y prevención de exclusiones. Nunca más pagar de más ni arriesgarte a una multa de ARCA.</p>
+      <div class="service-tags">
+        <span class="stag">Categorización</span>
+        <span class="stag">ARCA</span>
+        <span class="stag">Vencimientos</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <span class="service-num">02</span>
+      <h3 class="service-title">Liquidación de impuestos</h3>
+      <p class="service-desc">IVA, Ingresos Brutos (Régimen General, Simplificado y Convenio Multilateral) y Ganancias 4° categoría. Libros IVA digitales y presentaciones ante ARCA.</p>
+      <div class="service-tags">
+        <span class="stag">IVA</span>
+        <span class="stag">IIBB</span>
+        <span class="stag">Ganancias</span>
+        <span class="stag">SIRADIG</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <span class="service-num">03</span>
+      <h3 class="service-title">Facturación a consorcios</h3>
+      <p class="service-desc">Evitá rechazos y problemas de cobro. Asesoramiento especializado para contratistas que trabajan con consorcios: presupuestos, facturas y presentación de gastos correcta.</p>
+      <div class="service-tags">
+        <span class="stag">Consorcios</span>
+        <span class="stag">Factura B/C</span>
+        <span class="stag">Presupuestos</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <span class="service-num">04</span>
+      <h3 class="service-title">Freelancers y ventas online</h3>
+      <p class="service-desc">Organizá tus ingresos digitales y evitá problemas con ARCA. Declaración de cobros por transferencia, Mercado Pago, ingresos remotos y monotributo adecuado a tu actividad.</p>
+      <div class="service-tags">
+        <span class="stag">Freelance</span>
+        <span class="stag">MP</span>
+        <span class="stag">E-commerce</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <span class="service-num">05</span>
+      <h3 class="service-title">Automatización contable</h3>
+      <p class="service-desc">Scripts Python para impresión masiva de documentación fiscal, autocompletado de formularios ARCA y gestión de datos. Reducción de tiempos operativos hasta un 90%.</p>
+      <div class="service-tags">
+        <span class="stag">Python</span>
+        <span class="stag">SQL</span>
+        <span class="stag">Excel avanzado</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <span class="service-num">06</span>
+      <h3 class="service-title">Gestión administrativa</h3>
+      <p class="service-desc">Cuentas corrientes, conciliaciones bancarias, control de gestión y soporte en armado de balances. Organización documental para pymes y estudios.</p>
+      <div class="service-tags">
+        <span class="stag">Tango</span>
+        <span class="stag">SAP</span>
+        <span class="stag">Power BI</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- TECNOLOGÍA -->
+<section id="tecnologia">
+  <span class="section-tag reveal">Stack tecnológico</span>
+  <h2 class="section-title reveal">Contabilidad con <em>código</em></h2>
+  <div class="tech-layout">
+    <div class="tech-terminal reveal">
+      <div class="terminal-bar">
+        <div class="term-dot r"></div>
+        <div class="term-dot y"></div>
+        <div class="term-dot g"></div>
+        <span class="terminal-title">mmac_automation.py</span>
+      </div>
+      <div class="terminal-body" id="terminal-output">
+<span class="t-prompt">$</span> <span class="t-cmd">python mmac_arca_autofill.py</span>
+<span class="t-out">[INIT] Conectando con ARCA...</span>
+<span class="t-ok">[OK] Sesión iniciada</span>
+<span class="t-out">[RUN] Procesando 200 documentos fiscales...</span>
+<span class="t-ok">[OK] 200/200 completados</span>
+<span class="t-out">[INFO] Tiempo total: 40 segundos</span>
+<span class="t-out">[INFO] Ahorro vs. manual: 39min 20seg</span>
+<span class="t-ok">[DONE] Reducción operativa: 98.3%</span>
+
+<span class="t-prompt">$</span> <span class="t-cmd">python calculo_inverso_alicuotas.py</span>
+<span class="t-out">[CALC] Verificando retenciones...</span>
+<span class="t-ok">[OK] Consistencia confirmada</span>
+<span class="t-ok">[DONE] Montos imponibles validados</span>
+
+<span class="t-prompt">$</span> <span class="t-cursor"></span>
+      </div>
+    </div>
+    <div class="tech-stack reveal">
+      <div class="stack-group">
+        <div class="stack-group-label">Impuestos y ARCA</div>
+        <div class="stack-items">
+          <span class="stack-chip highlight">IVA Digital</span>
+          <span class="stack-chip highlight">IIBB / Conv. Multilateral</span>
+          <span class="stack-chip">Ganancias 4°</span>
+          <span class="stack-chip">Bienes Personales</span>
+          <span class="stack-chip highlight">ARCA / SIRADIG</span>
+          <span class="stack-chip">Monotributo</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <div class="stack-group-label">Programación y datos</div>
+        <div class="stack-items">
+          <span class="stack-chip highlight">Python</span>
+          <span class="stack-chip highlight">SQL</span>
+          <span class="stack-chip">Pandas · NumPy</span>
+          <span class="stack-chip">Power BI</span>
+          <span class="stack-chip">Excel avanzado</span>
+          <span class="stack-chip">Business Analytics</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <div class="stack-group-label">Software contable corporativo</div>
+        <div class="stack-items">
+          <span class="stack-chip highlight">Tango Gestión</span>
+          <span class="stack-chip">SAP</span>
+          <span class="stack-chip">ADA4</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <div class="stack-group-label">Formación académica</div>
+        <div class="stack-items">
+          <span class="stack-chip highlight">Contador Público — UNDEF</span>
+          <span class="stack-chip">Python Dev — Coderhouse</span>
+          <span class="stack-chip">Data Science — Coderhouse</span>
+          <span class="stack-chip">Aux. Contable — Gestar</span>
+          <span class="stack-chip">Contabilidad UTN</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div>
+    <span class="section-tag reveal">Contacto</span>
+    <h2 class="section-title reveal">Consultá sin<br><em>compromiso</em></h2>
+    <p class="section-body reveal" style="margin-bottom:2rem;">Contame tu situación y te digo cómo puedo ayudarte. Atención 100% online, rápida y personalizada.</p>
+    <div class="contact-form reveal">
+      <div class="form-group">
+        <label class="form-label">Nombre</label>
+        <input class="form-input" type="text" id="fn" placeholder="Tu nombre">
+      </div>
+      <div class="form-group">
+        <label class="form-label">WhatsApp o Email</label>
+        <input class="form-input" type="text" id="fc" placeholder="+54 11 · · · · / correo@ejemplo.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label">¿En qué puedo ayudarte?</label>
+        <textarea class="form-textarea" id="fm" placeholder="Contame brevemente tu situación: si sos monotributista, freelancer, tenés dudas con un consorcio..."></textarea>
+      </div>
+      <button class="form-btn" onclick="sendForm()">Enviar consulta →</button>
+      <div class="form-success" id="form-success">
+        ¡Consulta recibida! Marcos se va a comunicar con vos en las próximas horas.<br>
+        También podés escribirle directo por WhatsApp al <strong>11-5106-2286</strong>.
+      </div>
+    </div>
+  </div>
+  <div class="contact-info reveal">
+    <div class="contact-card">
+      <div class="contact-card-header">
+        <div class="cc-logo-mark">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+            <rect x="2" y="17" width="4" height="7" fill="#C8B99A"/>
+            <rect x="8" y="11" width="4" height="13" fill="#C8B99A" opacity="0.7"/>
+            <rect x="14" y="4" width="4" height="20" fill="#C8B99A" opacity="0.5"/>
+            <path d="M4 17 L10 10 L14 13.5 L16 4" stroke="#C8B99A" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="16" cy="4" r="1.8" fill="#C8B99A"/>
+          </svg>
+        </div>
+        <div>
+          <div class="cc-name">Marcos Martínez</div>
+          <div class="cc-role">Analista Contable · MMAC</div>
+        </div>
+      </div>
+      <ul class="contact-links">
+        <li class="contact-link-item">
+          <div class="cl-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#C8B99A" stroke-width="1.5">
+              <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21L8.5 10.5a11.044 11.044 0 005 5l1.113-1.724a1 1 0 011.21-.502l4.493 1.498A1 1 0 0121 15.72V19a2 2 0 01-2 2h-1c-8.284 0-15-6.716-15-15V5z"/>
+            </svg>
+          </div>
+          <a href="https://wa.me/5491151062286" class="cl-text">WhatsApp: 11-5106-2286</a>
+        </li>
+        <li class="contact-link-item">
+          <div class="cl-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#C8B99A" stroke-width="1.5">
+              <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <a href="mailto:mm.analistacontable@gmail.com" class="cl-text">mm.analistacontable@gmail.com</a>
+        </li>
+        <li class="contact-link-item">
+          <div class="cl-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#C8B99A" stroke-width="1.5">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </div>
+          <a href="https://instagram.com/MM_AnalistaContable" class="cl-text">@MM_AnalistaContable</a>
+        </li>
+        <li class="contact-link-item">
+          <div class="cl-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#C8B99A" stroke-width="1.5">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </div>
+          <a href="https://linkedin.com/in/martinez-marcos-12155b203/" class="cl-text">/in/martinez-marcos</a>
+        </li>
+      </ul>
+      <div class="contact-badge-row">
+        <div class="cc-badge">
+          <span class="cc-badge-val">100%</span>
+          <span class="cc-badge-label">Online</span>
+        </div>
+        <div class="cc-badge">
+          <span class="cc-badge-val">Sin cargo</span>
+          <span class="cc-badge-label">Primera consulta</span>
+        </div>
+        <div class="cc-badge">
+          <span class="cc-badge-val">Directa</span>
+          <span class="cc-badge-label">Atención personal</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-brand">MMAC</div>
+    <div class="footer-tagline">Facturá con precisión · Crecé con datos</div>
+  </div>
+  <div class="footer-copy">© 2025 · Marcos Martínez · Analista Contable · Ituzaingó, Buenos Aires</div>
+</footer>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
