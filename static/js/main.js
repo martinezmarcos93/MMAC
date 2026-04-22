@@ -32,19 +32,50 @@ const observer = new IntersectionObserver((entries) => {
 reveals.forEach(r => observer.observe(r));
 
 // Form
-function sendForm() {
-  const name = document.getElementById('fn').value.trim();
-  const contact = document.getElementById('fc').value.trim();
-  const msg = document.getElementById('fm').value.trim();
-  if (!name || !contact) {
+async function enviarFormularioCompleto() {
+  const nombre   = document.getElementById('fn').value.trim();
+  const contacto = document.getElementById('fc').value.trim();
+  const mensaje  = document.getElementById('fm').value.trim();
+
+  if (!nombre || !contacto) {
     alert('Por favor completá al menos nombre y contacto.');
     return;
   }
-  const waText = encodeURIComponent(
-    `Hola Marcos! Te escribo desde tu web.\n\nNombre: ${name}\nContacto: ${contact}\n\n${msg}`
-  );
-  window.open(`https://wa.me/5491151062286?text=${waText}`, '_blank');
-  document.getElementById('form-success').classList.add('show');
+
+  const btn = document.querySelector('.form-btn');
+  const originalText = btn.innerText;
+  btn.innerText = 'Enviando...';
+  btn.disabled = true;
+
+  try {
+    const response = await fetch('/send-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nombre, contacto, mensaje })
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+      document.getElementById('form-success').classList.add('show');
+      document.getElementById('fn').value = '';
+      document.getElementById('fc').value = '';
+      document.getElementById('fm').value = '';
+
+      const waText = encodeURIComponent(
+        `Hola Marcos! Te escribo desde tu web.\n\nNombre: ${nombre}\nContacto: ${contacto}\n\n${mensaje}`
+      );
+      window.open(`https://wa.me/5491151062286?text=${waText}`, '_blank');
+    } else {
+      alert('Error al enviar: ' + (result.error || 'Intentá de nuevo'));
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    alert('Hubo un problema. Podés escribir directamente por WhatsApp al 11-5106-2286.');
+  } finally {
+    btn.innerText = originalText;
+    btn.disabled = false;
+  }
 }
 
 // Active nav link
