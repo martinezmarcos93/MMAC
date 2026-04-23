@@ -43,38 +43,32 @@ async function enviarFormularioCompleto() {
   }
 
   const btn = document.querySelector('.form-btn');
-  const originalText = btn.innerText;
   btn.innerText = 'Enviando...';
   btn.disabled = true;
 
+  // 1. WhatsApp se abre SIEMPRE, pase lo que pase con el mail
+  const waText = encodeURIComponent(
+    `Hola Marcos! Te escribo desde tu web.\n\nNombre: ${nombre}\nContacto: ${contacto}\n\n${mensaje}`
+  );
+  window.open(`https://wa.me/5491151062286?text=${waText}`, '_blank');
+
+  // 2. Mostrar éxito al usuario inmediatamente
+  document.getElementById('form-success').classList.add('show');
+  document.getElementById('fn').value = '';
+  document.getElementById('fc').value = '';
+  document.getElementById('fm').value = '';
+  btn.innerText = 'Consulta enviada ✓';
+
+  // 3. Intentar enviar mail en segundo plano (silencioso — no bloquea ni muestra error)
   try {
-    const response = await fetch('/send-email', {
+    await fetch('/send-email', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ nombre, contacto, mensaje })
     });
-
-    const result = await response.json();
-
-    if (response.ok) {
-      document.getElementById('form-success').classList.add('show');
-      document.getElementById('fn').value = '';
-      document.getElementById('fc').value = '';
-      document.getElementById('fm').value = '';
-
-      const waText = encodeURIComponent(
-        `Hola Marcos! Te escribo desde tu web.\n\nNombre: ${nombre}\nContacto: ${contacto}\n\n${mensaje}`
-      );
-      window.open(`https://wa.me/5491151062286?text=${waText}`, '_blank');
-    } else {
-      alert('Error al enviar: ' + (result.error || 'Intentá de nuevo'));
-    }
-  } catch (error) {
-    console.error('Error:', error);
-    alert('Hubo un problema. Podés escribir directamente por WhatsApp al 11-5106-2286.');
-  } finally {
-    btn.innerText = originalText;
-    btn.disabled = false;
+  } catch (e) {
+    // El mail falló silenciosamente — WhatsApp ya se abrió, no pasa nada
+    console.warn('Email no enviado:', e);
   }
 }
 
