@@ -1,66 +1,84 @@
 # MMAC — Marcos Martínez Analista Contable
 
-Sitio web profesional para asesoramiento impositivo y contable, con enfoque en automatización de procesos fiscales. Diseñado para monotributistas, autónomos, freelancers y pymes.
+Sitio web profesional para servicios de asesoramiento impositivo y contable, orientado a monotributistas, autónomos, freelancers y pymes. El proyecto combina una presentación comercial responsive con una base técnica en Flask preparada para automatizaciones y futuras integraciones.
 
-## 🧾 Propuesta de valor
+## Propuesta de valor
 
-- Liquidación de **IVA, Ingresos Brutos y Ganancias 4° categoría (SIRADIG)**
-- **Monotributo** inteligente (categorización, topes, vencimientos)
-- **Convenio Multilateral** y facturación a consorcios
-- **Automatización de procesos** con Python y SQL (hasta 90% menos tiempo operativo)
-- Atención 100% online, directa con Marcos
+MMAC centraliza la presentación de servicios contables y fiscales y comunica una orientación hacia la automatización de procesos administrativos.
 
-## 🚀 Demo local
+- IVA e Ingresos Brutos.
+- Ganancias de cuarta categoría / SIRADIG.
+- Monotributo: categorización, topes y vencimientos.
+- Convenio Multilateral.
+- Facturación y gestión administrativa.
+- Automatización de procesos fiscales mediante Python y SQL.
+- Atención remota y contacto directo.
 
-```bash
-# Clonar repositorio
-git clone https://github.com/tuusuario/mmac-web.git
-cd mmac-web
+## Stack
 
-# Crear entorno virtual (recomendado)
-python -m venv venv
-source venv/bin/activate   # Linux/Mac
-venv\Scripts\activate      # Windows
+| Capa | Tecnología |
+|---|---|
+| Backend | Python + Flask |
+| Frontend | HTML5 + CSS3 + JavaScript vanilla |
+| Tipografías | DM Serif Display, Outfit, DM Mono |
+| Animaciones | CSS keyframes + Intersection Observer |
+| Desarrollo local | Flask development server |
 
-# Instalar dependencias
-pip install flask
+## Características
 
-# Ejecutar
-python main.py
+- Diseño responsive con enfoque mobile-first.
+- Navbar dinámica al hacer scroll.
+- Cursor personalizado e interacciones hover.
+- Animaciones mediante Intersection Observer.
+- Terminal visual interactiva para representar automatizaciones.
+- Formulario de contacto con derivación a WhatsApp.
+- Grilla de servicios con estados interactivos.
 
-Abrir http://127.0.0.1:5000 en el navegador.
+## Estructura
 
-📁 Estructura del proyecto
-
-mmac-web/
-├── main.py                 # Servidor Flask
+```text
+MMAC/
+├── main.py
 ├── templates/
-│   └── index.html          # Frontend completo (HTML/CSS/JS embebido)
+│   └── index.html
 ├── static/
 │   ├── css/
-│   │   └── styles.css      # Estilos principales
+│   │   └── styles.css
 │   └── js/
-│       └── main.js         # Interacciones (cursor, scroll reveal, formulario)
+│       └── main.js
+├── env.example
 └── README.md
+```
 
-🎨 Stack técnico del sitio
-Capa	Tecnología
-Backend	Flask (Python)
-Frontend	HTML5, CSS3, JavaScript vanilla
-Fuentes	DM Serif Display, Outfit, DM Mono
-Animaciones	Intersection Observer, CSS keyframes
-Despliegue	Compatible con Render, PythonAnywhere, Vercel (vía Flask)
-✨ Características destacadas
-Cursor personalizado con efecto hover en elementos interactivos
+## Desarrollo local
 
-Reveal on scroll (las secciones aparecen al hacer scroll)
+Requisitos: Python 3.10+ y pip.
 
-Navbar dinámica (cambia de color al hacer scroll)
+```bash
+git clone https://github.com/martinezmarcos93/MMAC.git
+cd MMAC
+python -m venv venv
 
-Terminal interactiva animada (simula automatizaciones reales)
+# Linux/macOS
+source venv/bin/activate
 
-Formulario de contacto que redirige a WhatsApp
+# Windows
+venv\\Scripts\\activate
 
-Diseño responsive (mobile first, breakpoint en 900px)
+pip install flask
+python main.py
+```
 
-Grid de servicios con hover effects
+Abrí `http://127.0.0.1:5000` en el navegador.
+
+## Despliegue y seguridad
+
+Las credenciales y variables de producción deben mantenerse fuera del código fuente. No se deben almacenar secretos, tokens ni credenciales reales en el repositorio. `env.example` sirve como referencia para las variables locales.
+
+## Estado
+
+Este repositorio corresponde al sitio web profesional de MMAC. Las automatizaciones contables y los sistemas de gestión relacionados forman proyectos separados dentro del ecosistema.
+
+## Licencia
+
+No se especifica actualmente una licencia pública para este repositorio.
